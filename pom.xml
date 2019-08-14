@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
 		<!-- Maven默认执行Jmeter报告结果生成的路径 -->
-		<!-- <jmeter.result.jtl.dir>${project.build.directory}\jmeter\results</jmeter.result.jtl.dir>
+<!-- 		<jmeter.result.jtl.dir>${project.build.directory}\jmeter\results</jmeter.result.jtl.dir>
 		<jmeter.result.html.dir>${project.build.directory}\jmeter\html</jmeter.result.html.dir>  -->
 		<!-- Jenkins构建生成报告所在路径 -->
 		
@@ -38,7 +38,7 @@
                 </executions>
                 <configuration>
                     <!-- 增加jar包,需要先将jar注册到本地maven仓库，打开cmd使用如下命令-->
-					<!--mvn install:install-file -Dfile=D:\rjcx\apache-jmeter-3.3\lib\ext\encryption-0.0.1-SNAPSHOT-jar-with-dependencies.jar -DgroupId=com.lemon -DartifactId=encryption -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -->
+					<!--mvn install:install-file -Dfile=D:\software\apache-jmeter-3.3\lib\ext\encryption-0.0.1-SNAPSHOT-jar-with-dependencies.jar -DgroupId=com.lemon -DartifactId=encryption -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -->
                     <jmeterExtensions>
                         <!-- 本地自己写的jar-->
 						<artifact>com.lemon:encryption:0.0.1-SNAPSHOT</artifact>
@@ -51,7 +51,6 @@
                     <testResultsTimestamp>false</testResultsTimestamp>
                     <testFilesIncluded>
                         <!-- //指定运行的jmeter脚本 -->
-                        <jMeterTestFile>beanshell.jmx</jMeterTestFile>
 					</testFilesIncluded> 
                     <!-- 指定jtl生成目录 -->
                     <resultsDirectory>${jmeter.result.jtl.dir}</resultsDirectory>
